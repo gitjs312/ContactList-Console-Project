@@ -225,6 +225,18 @@ public static void deleteContact() {
             System.out.println("Contact deleted successfully!");
         }
     }
+    System.out.println("Do you want to delete another contact? (Y/N) = ");
+    char ch = input.next().charAt(0);
+    if(ch == 'Y' || ch == 'y') {
+        clearConsole();
+        DeleteContact();
+    } 
+    else {
+        clearConsole();
+        HomePage();
+    }
+
+    
 }
 
 //updateName function's method declaration
@@ -531,7 +543,6 @@ public static void startSearchingContact() {
             deleteContact();
         }
         else {
-            System.out.println("You will be redirected to the home page...");
             clearConsole();
             HomePage();
         }
@@ -625,11 +636,21 @@ public static void startSearchingContact() {
                     ListContacts();
                     break;
                 case 7:
-                    System.out.println("Exit");
+                    System.out.println("\n\n-----------Exitting the program---------------\n");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    System.out.println("\n\nInvalid option. Please try again.\n");
+                    System.out.println("Do you want to try again? (Y/N) = ");
+                    char ch = input.next().charAt(0);
+                    if(ch == 'Y' || ch == 'y') {
+                        clearConsole();
+                        HomePage();
+                    }
+                    else {
+                        System.out.println("\n\n-----------Exitting the program---------------\n");
+                        System.exit(0);
+                    }
             }
     }
 }
